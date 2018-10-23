@@ -127,8 +127,8 @@ public class Ejercicio {
 	public void imprimeAleatorios (int n) {
 		for (int i = 0; i < n; i++) {
 			Random rand = new Random();
-			int numb = rand.nextInt(400) + 101; 
-			System.out.println(i+1 + ".- " + numb);
+			int num = rand.nextInt(400) + 101; 
+			System.out.println(i+1 + ".- " + num);
 		}
 	}
 }
