@@ -2,6 +2,8 @@ package principal;
 
 import java.util.Random;
 
+import modelo.Persona;
+
 public class Ejercicio {
 	public static void main(String[] args) {
 		//1. Imprimir por consola el valor de 2 elevado a 3
@@ -49,12 +51,15 @@ public class Ejercicio {
 		int minus = Ejercicio.calNumMenor(x, y, z, k);
 		System.out.println(minus);
 		//System.out.println(menor.calNumMenor(x, y, z, k));
-		//10. imprime por consola n números enteros aleatorios entre 1 y 100
+		//10. Imprime por consola n números enteros aleatorios entre 1 y 100
 		Ejercicio aleatorio = new Ejercicio();
 		aleatorio.imprimeAleatorios(n);
-		//11. tirar múltiples dados y contar cuantas veces sale cada número
+		//11. Tirar múltiples dados y contar cuantas veces sale cada número
 		int tiradas = random.nextInt(10)+1;
-		
+		//12. Devolver una lista de personas
+		int personas = 10;
+		Ejercicio listado = new Ejercicio();
+		listado.crearListaPersonas(personas);
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
@@ -106,7 +111,6 @@ public class Ejercicio {
 					return x;
 				else 
 					return k;
-	
 		else if (z < k)
 			return z;
 		else
@@ -131,4 +135,14 @@ public class Ejercicio {
 			System.out.println(i+1 + ".- " + num);
 		}
 	}
+	
+	Persona[] crearListaPersonas (int personas) {
+		Persona[] lista = null;
+		lista = new Persona[personas];
+		for (int i = 0; i < lista.length; i++) {
+			lista[i] = new Persona();
+		}
+		return lista;
+	}
+	
 }
