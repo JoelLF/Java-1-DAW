@@ -2,6 +2,8 @@ package principal;
 
 import java.util.Random;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.CompareGenerator;
+
 import modelo.Persona;
 
 public class Ejercicio {
@@ -43,7 +45,6 @@ public class Ejercicio {
 		Ejercicio tirar = new Ejercicio();
 		System.out.println("El dado ha resultado en " + tirar.dado());
 		//9. Devolver menor
-		Ejercicio menor = new Ejercicio();
 		int x = 6;
 		int y = 5;
 		int z = 9;
@@ -60,6 +61,16 @@ public class Ejercicio {
 		int personas = 10;
 		Ejercicio listado = new Ejercicio();
 		listado.crearListaPersonas(personas);
+		//13. Crear un método que devuelva el saldo de una cuenta, partiendo de una lista de movimientos y del saldo inicial
+		
+		//14. Iterar en la cadena mostrando sus caracteres
+		for (int i = 0; i < gc.length(); i++) {
+			System.out.println(gc.charAt(i));
+		}
+		//15. Comparar cadenas
+		String cad1= new String ("abcd");
+		String cad2 = new String ("abca");
+		System.out.println(cad1.compareTo(cad2));
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
