@@ -62,7 +62,15 @@ public class Ejercicio {
 		Ejercicio listado = new Ejercicio();
 		listado.crearListaPersonas(personas);
 		//13. Crear un método que devuelva el saldo de una cuenta, partiendo de una lista de movimientos y del saldo inicial
-		
+		Ejercicio saldo = new Ejercicio();
+		float saldoInicial = 1300;
+		float[] movimientos = new float [5]; 
+		movimientos[0] = 50.90f;
+		movimientos[1] = 20.50f;
+		movimientos[2] = 250;
+		movimientos[3] = 10.95f;
+		movimientos[4] = 5.99f;
+		float saldoFinal = saldo.calcularSaldoFinal(saldoInicial, movimientos);
 		//14. Iterar en la cadena mostrando sus caracteres
 		for (int i = 0; i < gc.length(); i++) {
 			System.out.println(gc.charAt(i));
@@ -170,6 +178,13 @@ public class Ejercicio {
 			}
 		}		
 		return resultado;
+	}
+	
+	public float calcularSaldoFinal (float saldoInicial, float[] movimientos) {
+		for (int i = 0; i < movimientos.length; i++) {
+			saldoInicial -= movimientos[i];
+		}
+		return saldoInicial;
 	}
 	
 }
