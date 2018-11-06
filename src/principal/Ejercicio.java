@@ -68,9 +68,13 @@ public class Ejercicio {
 			System.out.println(gc.charAt(i));
 		}
 		//15. Comparar cadenas
-		String cad1= new String ("abcd");
+		String cad1 = new String ("abcd");
 		String cad2 = new String ("abca");
 		System.out.println(cad1.compareTo(cad2));
+		//16. Convertir cadenas de un array de entrada a uno de salida
+		String[] datos = {"123","8k8","9811","xyz"};
+		convertir.convierteCadenas(datos);
+		
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
@@ -154,6 +158,18 @@ public class Ejercicio {
 			lista[i] = new Persona();
 		}
 		return lista;
+	}
+	
+	public int[] convierteCadenas (String[] cadenas) {
+		int[] resultado = new int[cadenas.length];
+		for(int i = 0; i < resultado.length; i++) {
+			try {
+				resultado[i] = Integer.parseInt(cadenas[i]);
+			} catch (NumberFormatException ex) {
+				resultado[i] = -1;
+			}
+		}		
+		return resultado;
 	}
 	
 }
