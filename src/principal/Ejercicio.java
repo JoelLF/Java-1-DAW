@@ -7,7 +7,7 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.CompareGenerator;
 import modelo.Persona;
 
 public class Ejercicio {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		//1. Imprimir por consola el valor de 2 elevado a 3
 		System.out.println(Math.pow(2.0, 3.0));
 		//2. Imprime un valor aleatorio entre 1 y 100
@@ -82,7 +82,17 @@ public class Ejercicio {
 		//16. Convertir cadenas de un array de entrada a uno de salida
 		String[] datos = {"123","8k8","9811","xyz"};
 		convertir.convierteCadenas(datos);
-		
+		//17. Reloj
+		Ejercicio hora = new Ejercicio();
+		//hora.reloj();
+		//18. Números primos
+		Ejercicio primo = new Ejercicio();
+		int numb = 12;
+		System.out.println(primo.primo(numb));
+		//19. Lista de números primos
+		int desde = 1;
+		int hasta = 100;
+		primo.listaPrimos(desde, hasta);
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
@@ -187,4 +197,33 @@ public class Ejercicio {
 		return saldoInicial;
 	}
 	
+	public void reloj() throws InterruptedException {
+		for(int h = 0; h <= 12; h++) {
+			for(int m = 0; m <= 60; m++) {
+				for (int s = 0; s <= 60; s++) {
+					Thread.sleep(1000);
+					System.out.println(h + ":" + m + ":" + s);
+				}
+			}
+		}
+	}
+	
+	public boolean primo(int numb) {
+		if (numb == 1) {
+			return true;
+		}
+		for (int i = 2; i < numb; i++) {
+			if (numb % i == 0) {
+				return false;
+			}
+		} return true;
+	}
+	
+	public void listaPrimos(int desde, int hasta) {
+		for(int i = desde; i < hasta; i++) {
+			if(primo(i)) {
+				System.out.println(i);				
+			}
+		}
+	}
 }
