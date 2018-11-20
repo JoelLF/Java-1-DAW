@@ -64,12 +64,7 @@ public class Ejercicio {
 		//13. Crear un método que devuelva el saldo de una cuenta, partiendo de una lista de movimientos y del saldo inicial
 		Ejercicio saldo = new Ejercicio();
 		float saldoInicial = 1300;
-		float[] movimientos = new float [5]; 
-		movimientos[0] = 50.90f;
-		movimientos[1] = 20.50f;
-		movimientos[2] = 250;
-		movimientos[3] = 10.95f;
-		movimientos[4] = 5.99f;
+		float[] movimientos = new float [] {50.90f, 20.50f, 250, 10.95f, 5.99f}; 
 		float saldoFinal = saldo.calcularSaldoFinal(saldoInicial, movimientos);
 		//14. Iterar en la cadena mostrando sus caracteres
 		for (int i = 0; i < gc.length(); i++) {
@@ -93,6 +88,14 @@ public class Ejercicio {
 		int desde = 1;
 		int hasta = 100;
 		primo.listaPrimos(desde, hasta);
+		//20.1 Dada una lista (array) de enteros (int), obtener la lista INVERTIDA sobre si misma
+		int[] lista = new int[] {4, 5, 6, 3, 2, 1};
+		Ejercicio cadena = new Ejercicio();
+		cadena.invertirLista(lista);
+			//20.2 Dadas dos listas PREVIAMENTE ORDENADAS,  se pide obtener la lista MEZCLA de ambas
+			
+			//20.3 // 3. Dada una cadena , obtener la cadena INVIRTIENDO sus caracteres (char) usar charAt() o toCharArray()
+			
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
@@ -218,12 +221,31 @@ public class Ejercicio {
 			}
 		} return true;
 	}
-	
+		
 	public void listaPrimos(int desde, int hasta) {
 		for(int i = desde; i < hasta; i++) {
 			if(primo(i)) {
 				System.out.println(i);				
 			}
 		}
+	}
+	
+	
+	public void invertirLista(int[] lista) {
+		int[] resultado = new int [lista.length];
+		for (int i = 0, j = lista.length - 1; i < lista.length; i++, j--) {
+				resultado [j] = lista[i];
+		}
+	}
+	
+	public int[] mezclaListasOrdenadas(int[] l1, int[] l2) {
+		return l2;
+		
+		
+	}
+	
+	public String invertirCaracteres (String cadena) {
+		return cadena;
+		
 	}
 }
