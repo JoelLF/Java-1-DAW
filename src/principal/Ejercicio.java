@@ -93,9 +93,12 @@ public class Ejercicio {
 		Ejercicio cadena = new Ejercicio();
 		cadena.invertirLista(lista);
 			//20.2 Dadas dos listas PREVIAMENTE ORDENADAS,  se pide obtener la lista MEZCLA de ambas
-			
-			//20.3 // 3. Dada una cadena , obtener la cadena INVIRTIENDO sus caracteres (char) usar charAt() o toCharArray()
-			
+			int[] array1 = {1,2,3,4};
+			int[] array2 = {5,6,7,8};
+			int[] mezcla = cadena.mezclaListasOrdenadas(array1, array2);
+			//20.3 // 3. Dada una cadena, obtener la cadena INVIRTIENDO sus caracteres (char) usar charAt() o toCharArray()
+			String cadenaChar = new String("Buenos días");
+			String resultado = cadena.invertirCaracteres(cadenaChar);
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
@@ -230,6 +233,16 @@ public class Ejercicio {
 		}
 	}
 	
+	public void ordenarArray(int[] array) {
+		int aux = 0;
+		for (int i = 0; i < array.length - 1; i++)
+			for (int j = i + 1; j < array.length; j++)
+				if (array[i] > array[j]) {
+					aux = array[i];
+					array[i] = array[j];
+					array[j] = aux;
+				}
+	}	
 	
 	public void invertirLista(int[] lista) {
 		int[] resultado = new int [lista.length];
@@ -238,14 +251,26 @@ public class Ejercicio {
 		}
 	}
 	
-	public int[] mezclaListasOrdenadas(int[] l1, int[] l2) {
-		return l2;
+	public int[] mezclaListasOrdenadas(int[] array1, int[] array2) {
+		int[] mezcla = new int[array1.length+array2.length];
 		
+		for (int i = 0; i < array1.length; i++) {
+			mezcla[i] = array1[i];
+		}
 		
+		for (int j = 0; j < array2.length; j++) {
+			mezcla[j+array1.length] = array2[j];
+		}		
+		ordenarArray(mezcla);
+		return mezcla;
 	}
 	
 	public String invertirCaracteres (String cadena) {
-		return cadena;
-		
+		String resultado = new String();
+		for (int i = cadena.length() - 1; i >= 0; i--) {
+			resultado += cadena.charAt(i);		
+		}
+		System.out.println(resultado);
+		return resultado;		
 	}
 }
