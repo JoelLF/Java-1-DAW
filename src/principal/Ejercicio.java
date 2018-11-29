@@ -99,6 +99,11 @@ public class Ejercicio {
 			//20.3 // 3. Dada una cadena, obtener la cadena INVIRTIENDO sus caracteres (char) usar charAt() o toCharArray()
 			String cadenaChar = new String("Buenos días");
 			String resultado = cadena.invertirCaracteres(cadenaChar);
+		//21. Declara en la clase Ejercicio un array de personas
+		Persona[] persona;
+		//22 Declara en la clase Persona un array de Personas, que represente los hijos biológicos que tiene
+		//Persona.java *11
+		
 	}
 	
 	public void listaIntervaloEnteros(int a, int b) {
@@ -272,5 +277,17 @@ public class Ejercicio {
 		}
 		System.out.println(resultado);
 		return resultado;		
+	}
+	
+	private Persona[] personas;
+	public void hijosPersonas() {
+		for(int i = 0; i < personas.length; i++) {
+			Persona[] hijos = personas[i].getHijosBiológicos();
+			if (hijos != null) {
+				for (int j = 0; j < hijos.length; j++) {
+					System.out.println("Hijo -> " + hijos[j].getNombre());
+				}
+			}
+		}
 	}
 }

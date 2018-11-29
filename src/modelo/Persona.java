@@ -5,13 +5,12 @@ import java.util.Random;
 
 public class Persona {
 	private String nif;
-	 private String nombre;
-	 private int longitudPaso;
-	private LocalDate fecha_nac; // Clase "LocalDate" manejar fechas
+	private String nombre;
+	private int longitudPaso;
+	private LocalDate fecha_nac; 
+	private Persona[] hijosBiológicos;
 	 
-	 
-	 
-	 public Persona() {
+	public Persona() {
 		super();
 		this.nif = "12345678F";
 		this.nombre="Anónimo";
@@ -28,27 +27,12 @@ public class Persona {
 		this.fecha_nac = null;
 	}
 
-	
-	 
-	 public int caminar (int numPasos) {
-		 
-		 double a=9.0;
-		 double raiz = Math.sqrt(a);
-		 
-		 Random miRandom = new Random(); // Crea un objeto de la clase "Random"
-		 
-		 int valor = miRandom.nextInt();
-		 
-		 return numPasos * longitudPaso / 100;
-		 
-	 }
-
 	public String getNif() {
 		return nif;
 	}
 
 	public void setNif(String nif) {
-		this.nif = nif;  // -- nif de la derecha es que se pasa por parámetro. Es diferente a la propiedad nif
+		this.nif = nif; 
 	}
 
 	public String getNombre() {
@@ -74,4 +58,25 @@ public class Persona {
 	public void setFecha_nac(LocalDate fecha_nac) {
 		this.fecha_nac = fecha_nac;
 	}
+	
+	 public Persona[] getHijosBiológicos() {
+		return hijosBiológicos;
+	}
+
+	public void setHijosBiológicos(Persona[] hijosBiológicos) {
+		this.hijosBiológicos = hijosBiológicos;
+	}
+	
+	 public int caminar (int numPasos) {
+		 
+		 double a=9.0;
+		 double raiz = Math.sqrt(a);
+		 
+		 Random miRandom = new Random();
+		 
+		 int valor = miRandom.nextInt();
+		 
+		 return numPasos * longitudPaso / 100;
+		 
+	 }
 }
